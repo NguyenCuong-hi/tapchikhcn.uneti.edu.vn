@@ -7,11 +7,11 @@ session_start();
 
 //configuration
 define('BASE_PATH', __DIR__);
-define('CURRENT_DOMAIN', current_domain() );
+define('CURRENT_DOMAIN', current_domain() . '/tapchikhcn.uneti.edu.vn/');
 define('DB_HOST', 'localhost');
 define('DB_NAME', 'khcn-uneti');
 define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '123456');
+define('DB_PASSWORD', '');
 define('DISPLAY_ERROR', true);
 
 //mail config

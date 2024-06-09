@@ -34,8 +34,7 @@ use Database\DataBase;
     <style>
         .menu_left {
             display: flex;
-            padding-right: 32px;
-            width: 23%;
+            /* padding-right: 32px; */
             flex-direction: column;
             box-sizing: border-box;
             padding: 8px;
@@ -47,7 +46,7 @@ use Database\DataBase;
 
         .menu_left > div {
             width: 100%;
-            margin: 8px 0;
+            /* margin: 8px 0; */
         }
 
         .menu_left button {
@@ -61,15 +60,14 @@ use Database\DataBase;
         }
 
         /* Responsive */
-        /* @media screen and (max-width: 768px) {
-            .menu_left {
-                width: 100%;
-                padding-right: 0;
+        @media screen and (max-width: 768px) {
+          #left-menu{
+              display:none;
             }
-        } */
+        }
         .menu_left{
             list-style: none;
-            padding: 10px;
+            /* padding: 10px; */
         }
         .menu_left a{
             text-decoration: none;
@@ -81,7 +79,7 @@ use Database\DataBase;
             text-align: left;
             font-size: medium;
             text-transform: uppercase;
-            font-size: 1vw;
+            font-size: 7px;
                         box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
         }
         @media screen and (min-width: 768px) {
@@ -97,20 +95,30 @@ use Database\DataBase;
             text-transform: uppercase;
             font-size: 1vw;
                 box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+                
         }
+
 
 }
         .menu_left a:hover {
     transform: translateY(-2px) rotateX(8deg) rotateY(3deg);
 }
+
     </style>
 
-    <div class="menu_left">
-        <a href="<?= url('/')?>">Trang chủ</a>
-        <a href="<?= url('khoahoccongnghe')?>">Khoa học - công nghệ</a>
-        <a href="<?= url('kinhtexahoi')?>">Kinh tế - xã hội</a>
-        <a href="<?= url('diendankhoahoc')?>">Diễn đàn khoa học</a>
-        <a href="<?= url('thongtintraodoi')?>">Thông tin trao đổi</a>
-        <a href="<?= url('lienhe')?>">Liên hệ</a>
+   
+    <div class="col-md-3 px-0 pt-0" id="left-menu" >
+                 <div class="menu_left" style ="padding-top:0">
+                    <nav class="nav flex-column">
+                    <a href="<?= url('/') ?>" class="nav-link  text-white mb-2 rounded">Trang chủ</a>
+                    <a href="<?= url('khoahoccongnghe') ?>" class="nav-link  text-white mb-2 rounded">Khoa học - công nghệ</a>
+                    <a href="<?= url('kinhtexahoi') ?>" class="nav-link  text-white mb-2 rounded">Kinh tế - xã hội</a>
+                    <a href="<?= url('diendankhoahoc') ?>" class="nav-link  text-white mb-2 rounded">Diễn đàn khoa học</a>
+                    <a href="<?= url('thongtintraodoi') ?>" class="nav-link  text-white mb-2 rounded">Thông tin trao đổi</a>
+                    <a href="<?= url('lienhe') ?>" class="nav-link  text-white mb-2 rounded">Liên hệ</a>
+                </nav>
+       
+           </div>      
     </div>
+   
 
