@@ -18,8 +18,8 @@
     .image {
        
         margin: 1vh 0;
-        width: 12vw;
-        height: 13vh;
+        width: 30vw;
+        height: 18vh;
         cursor: pointer;
         transition: transform .2s ease-out;
         border-radius: 2.5%;
@@ -28,6 +28,8 @@
     @media screen and (min-width: 768px) {
         .image {
             height: 28vh;
+            width: 13vw;
+     
         }
 
     }
@@ -125,137 +127,84 @@
 require_once(BASE_PATH . '/template/app/layouts/header.php');
 ?>
 
-
-<div class="body_getdata" style="display: flex;  margin-top: 6vh; margin-right: 3.2vh">
-    <?php require_once(BASE_PATH . '/template/app/layouts/menuleft.php') ?>
-
-    <div style="width: 62%; margin: 0; padding: 4px; box-sizing: border-box">
-        <div style="display: flex; flex: 1; justify-content: space-between">
-            <!-- Cột giới thiệu -->
-            <div class="card-panel" style="background-color: #ffffff; padding: 8px; border-radius: 8px; width: 33%; flex-grow: 1; transform: translateY(-2px) rotateX(8deg) rotateY(3deg); transition: transform 0.3s ease;
-                text-transform: uppercase;">
-
-                <a style="text-decoration: none" href="<?= url('gioithieu') ?>">
-                    <h3
-                        style="text-align: center; text-transform: uppercase; color: #0C548A;font-weight: 700; font-size: 1.8vw;">
-                        Giới thiệu</h3>
-
-                    <div style=" margin-bottom: 7vh; display: flex; justify-content: center; align-items: center;">
-
-                        <img style="border-radius: 5px; width:100%;max-width: 200px;max-height: 121px;"
-                            src="./public/banner-image/gioithieu.png" alt="Giới thiệu">
+<div class="container-fluid">
+<div class="row mt-4">
+<?php require_once(BASE_PATH . '/template/app/layouts/menuleft.php') ?>
+<div class="col-md-7">
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0" >
+                            <a href="<?= url('gioithieu') ?>" class="text-decoration-none" style="text-transform: uppercase;color: #0C548A;">
+                           
+                                <div class="card-body text-center p-0">
+                                    <h5 class="card-title" style=" font-weight: 700;   font-size: 29px;">Giới thiệu</h5>
+                                </div>
+                                <img src="./public/banner-image/gioithieu.png" class="card-img-top" alt="Giới thiệu">
+                            </a>
+                        </div>
                     </div>
-                </a>
-
-            </div>
-            <!-- Cột thông báo -->
-            <div style="background-color: #ffffff; padding: 8px; border-radius: 8px; width: 33%; flex-grow: 1;">
-
-                <a style="text-decoration: none" href="<?= url('thongbao') ?>">
-                    <h3
-                        style="text-align: center; text-transform: uppercase; color:#0C548A;font-weight: 700; font-size: 1.8vw;">
-                        Thông báo</h3>
-
-
-                    <div style=" margin-bottom: 7vh; display: flex; justify-content: center; align-items: center;">
-                        <a href="<?= url("thongbao") ?>">
-                            <img style="border-radius: 5px;width:100%; max-width: 200px;max-height: 121px;"
-                                src="./public/banner-image/thong-bao.png" alt="Thong bao">
-                        </a>
-
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0">
+                            <a href="<?= url('thongbao') ?>" class="text-decoration-none "  style="text-transform: uppercase;color: #0C548A;">
+                              
+                                <div class="card-body text-center p-0">
+                                    <h5 class="card-title" style=" font-weight: 700;   font-size: 29px;">Thông báo</h5>
+                                </div>
+                                <img src="./public/banner-image/thong-bao.png" class="card-img-top" alt="Thông báo">
+                            </a>
+                        </div>
                     </div>
-                </a>
-
-
-            </div>
-            <!-- Cột sự kiện -->
-            <div style="background-color: #ffffff; padding: 8px; border-radius: 8px; width: 33%; flex-grow: 1;">
-                <a style="text-decoration: none" href="#">
-                    <h3
-                        style="text-align: center; text-transform: uppercase; color: #0C548A;font-weight: 700; font-size: 1.8vw; ">
-                        Sự kiện</h3>
-                    <div style=" margin-bottom: 7vh; display: flex; justify-content: center; align-items: center;">
-
-                        <a href="<?= url('sukien') ?>">
-                            <img style="border-radius: 5px;width:100%;max-width: 200px;max-height: 121px;"
-                                src="./public/banner-image/sukien.png" alt="Giới thiệu">
-                        </a>
-
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0">
+                            <a href="<?= url('sukien') ?>" class="text-decoration-none" style="text-transform: uppercase;color: #0C548A;">
+                               
+                                <div class="card-body text-center p-0">
+                                    <h5 class="card-title" style=" font-weight: 700;   font-size: 29px;">Sự kiện</h5>
+                                </div>
+                                <img src="./public/banner-image/sukien.png" class="card-img-top" alt="Sự kiện">
+                            </a>
+                        </div>
                     </div>
-                </a>
-
-            </div>
-        </div>
-        <div style="display: flex; flex: 1; justify-content: space-between">
-            <div style="background-color: #ffffff; padding: 8px; border-radius: 8px; width: 100%;">
-
-                    <h3
-                            style="text-align: center; text-transform: uppercase; color: #0C548A;font-weight: 700; font-size: 1.8vw;">
-                        Góp ý</h3>
-
-                    <div style=" margin-bottom: 7vh; display: flex; justify-content: center; align-items: center;">
-                        <a id="openPopup" href="<?= url("gopy") ?>">
-                            <img style="border-radius: 5px;width:100%;max-width: 200px;max-height:  121px;"
-                                 src="./public/banner-image/guibai.png" alt="Giới thiệu">
-                        </a>
-                    </div>
-
-            </div>
-            <div style="background-color: #ffffff; padding: 8px; border-radius: 8px; width: 100%;">
-            </div>
-            <div style="background-color: #ffffff; padding: 8px; border-radius: 8px; width: 100%;">
-
-            </div>
-
-        </div>
-    </div>
-    <?php require_once(BASE_PATH . '/template/app/layouts/banner-right.php') ?>
-
-</div>
-<div>
-    <div style="margin-left: 3%; margin-top: 2vh;">
-        <h3 style="text-align: left;  color: #0C548A;font-weight: 700; font-size: 1.7vw;">Các số đã xuất bản</h3>
-    </div>
-    <div style="margin-left: 8%; margin-right:6%">
-
-
-        <div style="  /* display: flex;*/
-    flex-wrap: wrap;
-    /*justify-content: center;*/ /* căn giữa các sản phẩm */
-    margin-left: -20px;
-    margin-right: -20px;
-   
-    margin-bottom: 50px;">
-            <div class="image-container-parent">
-                <button id="scrollLeftBtn">&#10094;</button>
-                <div class="image-container-parent">
-
-
-
-
-                    <div class="image-container">
-
-                        <?php foreach ($posts as $datas): ?>
-                            <div class="image-item">
-                                <?php $id = $datas['id'] ?>
-                                <a href="<?= url('khcn/chi-tiet/' . $id) ?>">
-                                    <img class="image" src="<?php echo $datas['image'] ?>" alt="Nhà xuất bản">
-                                     <p  style="text-align:center;font-size:1vw;color: #000000;"><?= $datas['title']?></p>
-                                </a>
-
-                            </div>
-                        <?php endforeach; ?>
-
-                    </div>
-
                 </div>
-                <button id="scrollRightBtn">&#10095;</button>
+                <div class="row mb-4">
+                    <div class="col-md-4">
+                        <div class="card h-100 border-0">
+                            <a href="<?= url('gopy') ?>" class="text-decoration-none " style="text-transform: uppercase;color: #0C548A;">
+                              
+                                <div class="card-body text-center py-0">
+                                    <h5 class="card-title" style=" font-weight: 700;   font-size: 29px;">Góp ý</h5>
+                                </div>
+                                <img src="./public/banner-image/guibai.png" class="card-img-top"style="width:71%; display:flex; margin:auto" alt="Góp ý">
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-        </div>
-    </div>
-
+<?php require_once(BASE_PATH . '/template/app/layouts/banner-right.php') ?>
+<div class="row">
+            <div class="col-12">
+                <h3 class="text-left" style="color: #0C548A; font-weight: 700; font-size: 1.7vw;">Các số đã xuất bản</h3>
+                <div class="image-container-parent">
+                    <button id="scrollLeftBtn">&#10094;</button>
+                    <div class="image-container">
+                        <?php foreach ($posts as $datas): ?>
+                        <div class="image-item">
+                            <?php $id = $datas['id'] ?>
+                            <a href="<?= url('khcn/chi-tiet/' . $id) ?>">
+                                <img class="image" src="<?php echo $datas['image'] ?>" alt="Nhà xuất bản">
+                                <p class="image-title"><?= $datas['title'] ?></p>
+                            </a>
+                        </div>
+                        <?php endforeach; ?>
+                    </div>
+                    <button id="scrollRightBtn">&#10095;</button>
+                </div>
+            </div>
+            </div>
 </div>
+</div>
+
+
 <script>
     const scrollLeftBtn = document.getElementById("scrollLeftBtn");
     const scrollRightBtn = document.getElementById("scrollRightBtn");
