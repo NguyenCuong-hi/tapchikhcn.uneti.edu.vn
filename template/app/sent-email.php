@@ -37,55 +37,61 @@ require_once(BASE_PATH . '/template/app/layouts/header.php');
 
 ?>
 
-<div class="body_getdata" style="display: flex;  margin-top: 45px; margin-right: 32px">
-    <?php require_once(BASE_PATH . '/template/app/layouts/menuleft.php') ?>
+<div class="container-fluid">
+    <div class="row mt-4">
+        <?php require_once(BASE_PATH . '/template/app/layouts/menuleft.php') ?>
 
-    <div id="sendmail" style="width: 62%; display: flex;  flex-direction: column;
-         padding: 10px 3vw; box-sizing: border-box">
-        <div class="panel panel-default">
-            <div class="panel-body">
-                <h1 class="text-center">Gửi đóng góp qua email</h1>
-                <form id="sendmailForm"
-                      class="form-horizontal" role="form"
-                      action="<?= url("/gopy/gui") ?>" method="post">
-                    <div class="form-group">
-                        <label for="sname" class="col-sm-4 control-label">Tên của bạn<em>*</em></label>
-                        <div class="col-sm-20">
-                            <input id="sname" type="text" name="name_sender" value="" class="form-control">
-                        </div>
+        <div class="col-md-7">
+            <div id="sendmail" class="p-3">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <h2 class="text-center mb-4">Gửi đóng góp qua email</h2>
+                        <form id="sendmailForm" class="form-horizontal" role="form" action="<?= url("/gopy/gui") ?>" method="post">
+                            <div class="form-group row">
+                                <label for="sname" class="col-sm-4 control-label">Tên của bạn<em>*</em></label>
+                                <div class="col-sm-8">
+                                    <input id="sname" type="text" name="name_sender" value="" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="syourmail_iavim" class="col-sm-4 control-label">E-mail của bạn</label>
+                                <div class="col-sm-8">
+                                    <input id="syourmail_iavim" type="text" name="mail_sender" value="" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="semail" class="col-sm-4 control-label">E-mail người nhận<em>*</em></label>
+                                <div class="col-sm-8">
+                                    <input id="semail" type="text" name="mail_receive" placeholder="tapchikhcn@uneti.edu.vn"
+                                           value="tapchikhcn@uneti.edu.vn" class="form-control">
+                                </div>
+                            </div>
+
+                            <div class="form-group row">
+                                <label for="scontent" class="col-sm-4 control-label">Nội dung</label>
+                                <div class="col-sm-8">
+                                    <textarea id="scontent" name="title_magaz" rows="5" cols="20" class="form-control"></textarea>
+                                </div>
+                            </div>
+
+                            <input type="hidden" name="id" value="102">
+
+                            <div class="text-center">
+                                <button id="sendButton" class="btn btn-primary" type="submit" name="submit">Gửi</button>
+                            </div>
+                        </form>
                     </div>
-
-                    <div class="form-group">
-                        <label for="syourmail_iavim" class="col-sm-4 control-label">E-mail của bạn</label>
-                        <div class="col-sm-20">
-                            <input id="syourmail_iavim" type="text" name="mail_sender" value="" class="form-control">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="semail" class="col-sm-4 control-label">E-mail người nhận<em>*</em></label>
-                        <div class="col-sm-20">
-                            <input id="semail" type="text" name="mail_receive" placeholder="tapchikhcn@uneti.edu.vn"
-                                   value="tapchikhcn@uneti.edu.vn" class="form-control">
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="scontent" class="col-sm-4 control-label">Nội dung</label>
-                        <div class="col-sm-20">
-                            <textarea id="scontent" name="title_magaz" rows="5" cols="20" class="form-control"></textarea>
-                        </div>
-                    </div>
-
-                    <input
-                            type="hidden" name="id" value="102">
-
-                    <input id = "sendButton" class="btn btn-default" type="submit" name="submit" value="Gửi">
-                </form>
-<!--                <button id="sendButton" type="submit" class="btn btn-default"> Gửi</button>-->
+                </div>
             </div>
         </div>
+        
+        <?php require_once(BASE_PATH . '/template/app/layouts/banner-right.php'); ?>
     </div>
+</div>
+
+<?php require_once(BASE_PATH . '/template/app/layouts/footer.php'); ?>
 
     <script type="text/javascript"
             src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
@@ -145,6 +151,3 @@ require_once(BASE_PATH . '/template/app/layouts/header.php');
 </div>
 
 
-<?php
-require_once(BASE_PATH . '/template/app/layouts/footer.php');
-?>

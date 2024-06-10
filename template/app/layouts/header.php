@@ -110,82 +110,38 @@ $img_banner = $db->select(' SELECT * FROM banners WHERE id = 318 ')->fetch();
                 opacity: 1;
             }
 
-            .footer {
-                background-color: #F7F7F7;
-                height: 1vh;
-                box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-                width: 100%;
-                display: flex;
 
-                align-items: center;
-
-                justify-content: center;
-                border-top: 2px #9b3333 solid;
-                height: 5vh;
-            }
-
-            .current-date {
-                color: black;
-                font-size: 1.15vw;
-                width: 15%;
-
-                font-family: "Times New Roman", Helvetica, sans-serif;
-                font-weight: 400;
-                text-align: left;
-                height: max-content;
-                margin-left: 12px;
-            }
-
-            .title-head {
-                color: #9C1A1A;
-                line-height: 37px;
-                font-size: 1.2vw;
-                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-                font-weight: 700;
-                text-align: center;
-                width: 70%;
-                height: max-content;
-
-            }
-
-
-            .example input[type=text] {
-                padding: 8px; /* Adjusted padding for better height balance */
-                font-size: 1.2vw;
-                border: 1px solid grey;
-                float: left;
-                width: 77%;
-                background: #f1f1f1;
-                box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
-                height: 35px; /* Set a fixed height */
-            }
-
-            .example button {
-                float: left;
-                width: 16%;
-                padding: 8px; /* Adjusted padding to match input */
-                background: #2196F3;
-                color: white;
-                font-size: 1.2vw;
-                border: 1px solid grey;
-                border-left: none;
-                cursor: pointer;
-                height: 35px; /* Match the input height */
-                box-sizing: border-box; /* Ensures padding and border are included in the element's total width and height */
-            }
-
-            .example button:hover {
-                background: #0b7dda;
-            }
 
             .navbar-toggler-icon {
                 width: 0.5em;
                 height: 0.5em;
             }
+            .navbar-nav a{
+                font-size:15px;
+            }
+            @media screen and (min-width: 768px) {
+                #search-tren{
+                display:none;
+            }
+             }
+                @media screen and (max-width: 768px) {
+                    .navbar-nav a{
+                font-size:7px;
+            }
+            
+            #search-duoi{
+                display:none;
+            }
+             }
+             #date{
+                font-family: "Times New Roman", Helvetica, sans-serif;
+                font-weight: 400;
+             }
+
         </style>
 
         <div class="container-fluid banner p-0">
-            <img src="<?= url($img_banner['image']) ?>" alt="Banner" class="img-fluid custom-height w-100">
+            <img src="<?= url($img_banner['image']) ?>" alt="Banner" class="img-fluid custom-height" style="width:100%">
         </div>
 
 
@@ -197,54 +153,80 @@ $img_banner = $db->select(' SELECT * FROM banners WHERE id = 318 ')->fetch();
 <!--            <a href="--><?php //= url('thongtintraodoi') ?><!--">Thông tin trao đổi</a>-->
 <!--            <a style=" margin: 0 0px 0 2px;" href="--><?php //= url('lienhe') ?><!--">Liên hệ</a>-->
 <!--        </div>-->
-
-        <div class="container-fluid p-0">
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class="container-fluid p-0">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light px-0 pt-0">
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-                    <div class="navbar-nav menu">
-                        <a class="nav-item nav-link" href="<?= url('/') ?>">Trang chủ</a>
-                        <a class="nav-item nav-link" href="<?= url('khoahocconnghe') ?>">Khoa học - công nghệ</a>
-                        <a class="nav-item nav-link" href="<?= url('kinhtexahoi') ?>">Kinh tế - xã hội</a>
-                        <a class="nav-item nav-link" href="<?= url('diendankhoahoc') ?>">Diễn đàn khoa học</a>
-                        <a class="nav-item nav-link" href="<?= url('thongtintraodoi') ?>">Thông tin trao đổi</a>
-                        <a class="nav-item nav-link" href="<?= url('lienhe') ?>">Liên hệ</a>
+                <div class="col-9 col-md-3" id="search-tren">
+                <form class="form-inline  justify-content-end" method="GET" action="<?= url('search') ?>">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Tìm kiếm..." name="keyword">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary w-100" type="submit"><i class="fa fa-search"></i></button>
+                        </div>
                     </div>
+                </form>
+            </div>
+                <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+               
+                    <div class="navbar-nav menu  w-100">
+                        <a class="nav-item nav-link text-white mt-1" href="<?= url('/') ?>">Trang chủ</a>
+                        <a class="nav-item nav-link text-white mt-1" href="<?= url('khoahoccongnghe') ?>">Khoa học - công nghệ</a>
+                        <a class="nav-item nav-link text-white mt-1" href="<?= url('kinhtexahoi') ?>">Kinh tế - xã hội</a>
+                        <a class="nav-item nav-link text-white mt-1" href="<?= url('diendankhoahoc') ?>">Diễn đàn khoa học</a>
+                        <a class="nav-item nav-link text-white mt-1" href="<?= url('thongtintraodoi') ?>">Thông tin trao đổi</a>
+                        <a class="nav-item nav-link text-white mt-1" href="<?= url('lienhe') ?>">Liên hệ</a>
+                    </div>
+                    
                 </div>
             </nav>
         </div>
 
-        <div class="footer">
+        <div class="container-fluid bg-light border-top border-danger py-2 shadow-sm">
+        <div class="row align-items-center justify-content-between">
+            <div class="col-12 col-md-2">
+                <div id="date" class="text-dark font-weight-bold">
+                    <p>
+                        <script>
+                            var daysOfWeek = ['Chủ nhật', 'Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy'];
+                            var monthsOfYear = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
 
+                            var today = new Date();
+                            var dayOfWeek = daysOfWeek[today.getDay()];
+                            var day = today.getDate();
+                            var month = monthsOfYear[today.getMonth()];
+                            var year = today.getFullYear();
 
-            <div class="current-date " id="date">
-                <p>
-                    <script>
-                        var daysOfWeek = ['Chủ nhật', 'Thứ hai', 'Thứ ba', 'Thứ tư', 'Thứ năm', 'Thứ sáu', 'Thứ bảy'];
-                        var monthsOfYear = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12'];
-
-                        var today = new Date();
-                        var dayOfWeek = daysOfWeek[today.getDay()];
-                        var day = today.getDate();
-                        var month = monthsOfYear[today.getMonth()];
-                        var year = today.getFullYear();
-
-                        var formattedDate = dayOfWeek + ', ' + day + '/' + month + '/' + year;
-                        document.getElementById('date').innerHTML = formattedDate;
-                    </script>
-                </p>
+                            var formattedDate = dayOfWeek + ', ' + day + '/' + month + '/' + year;
+                            document.getElementById('date').innerHTML = formattedDate;
+                        </script>
+                    </p>
+                </div>
             </div>
 
-            <div class="title-head"> Giáo dục và đào tạo cùng với khoa học và công nghệ là quốc sách hàng đầu</div>
+            <div class="col-12 col-md-7 text-center pl-3">
+                <div class="font-weight-bold" style="color: #9C1A1A;
+    font-size: 19px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 700;">
+                    Giáo dục và đào tạo cùng với khoa học và công nghệ là quốc sách hàng đầu
+                </div>
+            </div>
 
-            <form class="example" method="GET" action="<?= url('search') ?>">
-                <input type="text" placeholder="Tìm kiếm..." name="keyword">
-                <button type="submit"><i class="fa fa-search"></i></button>
-            </form>
-
+            <div class="col-12 col-md-3" id="search-duoi">
+                <form class="form-inline  justify-content-end" method="GET" action="<?= url('search') ?>">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Tìm kiếm..." name="keyword">
+                        <div class="input-group-append">
+                            <button class="btn btn-primary w-100" type="submit"><i class="fa fa-search"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
         </div>
+    </div>
+
 
     </header>
