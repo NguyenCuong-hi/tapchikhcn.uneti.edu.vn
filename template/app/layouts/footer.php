@@ -31,12 +31,14 @@ use Database\DataBase;
     <img src="<?= url('./public/banner-image/logo.png') ?>" id="imgfooter" class="img-fluid" alt="Logo">
 </div>
                 <div class="col-12 col-md-9">
-                    <div class="col-md-10 p-0" style="border-bottom: solid #fff 4px;border-bottom-color: #fff;">
+                    <div class="col-md-10 p-0" style="">
                         <p class="m-0 text-uppercase "  style=" font-weight: 500;">
                             Tạp chí khoa học & công nghệ trường Đại học Kinh tế - Kỹ thuật Công nghiệp
                         </p>
                     </div>
-                    <p class="mb-2" style=" font-weight: 600;">JOURNAL OF SCIENCE & TECHNOLOGY UNIVERSITY OF ECONOMICS - TECHNOLOGY FOR INDUSTRIES</p>
+                    <p class="mb-2" style="font-weight: 600; border-top: solid #fff 4px; display: inline-block; padding-top: 4px;">
+    JOURNAL OF SCIENCE & TECHNOLOGY UNIVERSITY OF ECONOMICS - TECHNOLOGY FOR INDUSTRIES
+</p>
                     <div class="row">
                         <div class="col-12 col-md-6" style="font-size:14px; font-weight: 500;">
                             <p class="mb-1 ">Cơ quan chủ quản: Trường Đại học Kinh tế - Kỹ thuật Công nghiệp</p>
