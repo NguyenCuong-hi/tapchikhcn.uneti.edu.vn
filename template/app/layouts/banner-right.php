@@ -30,12 +30,12 @@ $tuyensinh = $db->select('SELECT * FROM banners WHERE id = 317 ')->fetch();
                 </div>
                 <h4 class=" mt-4" style="font-size: 1.1rem;color: #155fa2;font-family: 'Times New Roman', Times, serif;">LIÊN KẾT WEBSITE</h4>
                 <a href="<?= $bocongthuong['url'] ?>">
-                    <img src="<?= url($bocongthuong['image']) ?>" class="img-fluid border-primary mb-3 w-100" style=" max-width: 200px;">
+                    <img src="<?= url($bocongthuong['image']) ?>" class="img-fluid border-primary mb-3 w-100" >
                 </a>
                 <a href="<?= $truongdaihoc['url'] ?>">
-                    <img src="<?= url($truongdaihoc['image']) ?>" class="img-fluid border-primary mb-3 w-100" style= "max-width: 200px;">
+                    <img src="<?= url($truongdaihoc['image']) ?>" class="img-fluid border-primary mb-3 w-100" >
                 </a>
                 <a href="<?= $tuyensinh['url'] ?>">
-                    <img src="<?= url($tuyensinh['image']) ?>" class="img-fluid border-primary w-100" style=" max-width: 200px;">
+                    <img src="<?= url($tuyensinh['image']) ?>" class="img-fluid border-primary w-100" >
                 </a>
             </div>

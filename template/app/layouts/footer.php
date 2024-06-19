@@ -17,14 +17,16 @@ use Database\DataBase;
             width: 30%;
             height: 104%;
         }
-
+        .footer-row {
+            margin: 0 20px;
+        }
         }
 
       
     </style>
      <footer class="bg-dark text-white py-3" style="background-image: url('https://png.pngtree.com/background/20210710/original/pngtree-blue-technology-web-banner-picture-image_1038231.jpg'); background-size: cover; background-repeat: no-repeat;">
      
-            <div class="row">
+            <div class="row footer-row">
             <div class="col-12 col-md-auto d-flex align-items-start mb-3 pr-0 mb-md-0 " style="width: 7%;">
     <img src="<?= url('./public/banner-image/logo.png') ?>" id="imgfooter" class="img-fluid" alt="Logo">
 </div>
